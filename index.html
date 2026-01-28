@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teles Barbearia - Estilo e Tradição em Goiânia</title>
+    
+    <!-- Meta tags SEO -->
+    <meta name="description" content="Corte quantas vezes quiser numa barbearia de alto padrão em Goiânia. Especialistas em prótese capilar. Agende agora!">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Oswald:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Configuração de Cores Personalizadas -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        teles: {
+                            black: '#111111',
+                            dark: '#1A1A1A',
+                            cream: '#F5F1E6', // Tom creme sofisticado
+                            tiffany: '#0ABAB5', // Verde Tiffany
+                            tiffanyDark: '#089691',
+                            gold: '#D4AF37'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                        display: ['Oswald', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Ajustes finos de CSS */
+        body {
+            background-color: #111111;
+            color: #F5F1E6;
+        }
+        
+        .hero-bg {
+            background-image: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.7)), url('https://lh3.googleusercontent.com/sB8E9wjrSqWpAWgGtFDHYySD7LIh4yC9XGcbyjBTsMyJao7cRSxdhD20mMYqtq0SLgcgjsqhIOBcId5YWw=s265-w265-h265');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .btn-primary {
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 14px 0 rgba(10, 186, 181, 0.39);
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px 0 rgba(10, 186, 181, 0.5);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Scrollbar personalizada */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #111;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #0ABAB5;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Navegação Mobile/Simples -->
+    <nav class="fixed w-full z-50 bg-teles-black/95 backdrop-blur-sm border-b border-white/10 py-4">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <img src="https://lh3.googleusercontent.com/IpkS-fQYuQW1yG3udJrmeTE-xzpnNO8nrHK-2JWwmna4f36LGWs33yuyUptvTb6FIh1_-zGCNfcmSf_1XA=s265-w265-h265" alt="Teles Barbearia Logo" class="h-10 w-10 rounded-full border border-teles-tiffany">
+                <span class="font-display font-bold text-xl tracking-wider text-teles-cream">TELES<span class="text-teles-tiffany">BARBEARIA</span></span>
+            </div>
+            <a href="https://wa.me/5562991580263" target="_blank" class="hidden md:block bg-transparent border border-teles-tiffany text-teles-tiffany px-6 py-2 rounded font-bold hover:bg-teles-tiffany hover:text-black transition duration-300">
+                FALE CONOSCO
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative h-screen min-h-[600px] flex items-center justify-center text-center px-4 hero-bg">
+        <div class="max-w-4xl mx-auto z-10 animate-fade-in-up">
+            <!-- Logo Grande no Hero -->
+            <div class="mb-8 flex justify-center">
+                <img src="https://lh3.googleusercontent.com/IpkS-fQYuQW1yG3udJrmeTE-xzpnNO8nrHK-2JWwmna4f36LGWs33yuyUptvTb6FIh1_-zGCNfcmSf_1XA=s265-w265-h265" alt="Teles Barbearia" class="w-32 h-32 rounded-full border-4 border-teles-tiffany shadow-lg shadow-teles-tiffany/20">
+            </div>
+
+            <h1 class="font-display text-4xl md:text-6xl font-bold uppercase mb-6 leading-tight text-white">
+                Corte quantas vezes quiser numa <span class="text-teles-tiffany">barbearia de alto padrão</span> em Goiânia
+            </h1>
+            
+            <p class="font-sans text-lg md:text-xl text-gray-300 mb-10 max-w-2xl mx-auto font-light">
+                Mais de 18 anos cuidando de cada visual. Especialistas em prótese capilar. Luxo acessível que cabe no seu bolso.
+            </p>
+
+            <div class="flex flex-col md:flex-row gap-4 justify-center items-center">
+                <a href="https://wa.me/5562991580263" class="btn-primary w-full md:w-auto bg-teles-tiffany text-black px-8 py-4 rounded font-bold text-lg flex items-center justify-center gap-2">
+                    <i class="fab fa-whatsapp text-xl"></i> Agendar pelo WhatsApp
+                </a>
+                <a href="https://sites.appbarber.com.br/assinar?e=telesbarbearia-vfg1" class="w-full md:w-auto bg-transparent border-2 border-white text-white px-8 py-4 rounded font-bold text-lg hover:bg-white hover:text-black transition duration-300 flex items-center justify-center gap-2">
+                    <i class="fas fa-calendar-check"></i> Agendar no App
+                </a>
+            </div>
+            
+            <!-- Status Indicator -->
+            <div class="mt-8 inline-flex items-center gap-2 bg-black/50 px-4 py-2 rounded-full backdrop-blur-md border border-white/10">
+                <span class="relative flex h-3 w-3">
+                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                  <span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+                </span>
+                <span class="text-sm font-medium">Aberto agora · Fecha às 20:00</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Seção de Planos Mensais -->
+    <section class="py-20 bg-teles-cream text-teles-black" id="planos">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="font-display text-4xl font-bold mb-4">PLANOS MENSAIS</h2>
+                <div class="h-1 w-20 bg-teles-tiffany mx-auto mb-4"></div>
+                <p class="text-gray-600 max-w-xl mx-auto">Economize e mantenha o visual sempre impecável com nossas assinaturas exclusivas.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Plano VIP -->
+                <div class="bg-white p-8 rounded-lg shadow-xl hover:shadow-2xl transition duration-300 border-t-4 border-gray-800 flex flex-col relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 bg-gray-200 text-xs font-bold px-3 py-1 rounded-bl-lg uppercase tracking-wide">Popular</div>
+                    <h3 class="font-display text-2xl font-bold mb-2">PLANO VIP</h3>
+                    <p class="text-gray-500 text-sm mb-6">Para quem preza pelo corte perfeito.</p>
+                    <div class="text-4xl font-bold mb-6 text-teles-black">R$ 89,99<span class="text-base font-normal text-gray-500">/mês</span></div>
+                    
+                    <ul class="space-y-4 mb-8 flex-grow">
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-check text-teles-tiffany"></i> Corte Ilimitado
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-check text-teles-tiffany"></i> Agendamento Preferencial
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-check text-teles-tiffany"></i> Ambiente Climatizado
+                        </li>
+                    </ul>
+
+                    <a href="https://sites.appbarber.com.br/assinar?e=telesbarbearia-vfg1" class="block w-full text-center bg-gray-900 text-white py-3 rounded font-bold hover:bg-teles-tiffany hover:text-black transition duration-300">ASSINAR AGORA</a>
+                </div>
+
+                <!-- Plano Premium -->
+                <div class="bg-white p-8 rounded-lg shadow-xl hover:shadow-2xl transition duration-300 border-t-4 border-teles-tiffany flex flex-col transform md:-translate-y-4 relative">
+                    <div class="absolute top-0 right-0 bg-teles-tiffany text-black text-xs font-bold px-3 py-1 rounded-bl-lg uppercase tracking-wide">Recomendado</div>
+                    <h3 class="font-display text-2xl font-bold mb-2">PLANO PREMIUM</h3>
+                    <p class="text-gray-500 text-sm mb-6">Foco total na barba de respeito.</p>
+                    <div class="text-4xl font-bold mb-6 text-teles-tiffanyDark">R$ 94,99<span class="text-base font-normal text-gray-500">/mês</span></div>
+                    
+                    <ul class="space-y-4 mb-8 flex-grow">
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-check text-teles-tiffany"></i> Barba Ilimitada
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-check text-teles-tiffany"></i> Toalha Quente
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-check text-teles-tiffany"></i> Hidratação de Barba
+                        </li>
+                    </ul>
+
+                    <a href="https://sites.appbarber.com.br/assinar?e=telesbarbearia-vfg1" class="block w-full text-center bg-teles-tiffany text-black py-3 rounded font-bold hover:bg-black hover:text-white transition duration-300">ASSINAR AGORA</a>
+                </div>
+
+                <!-- Plano Black -->
+                <div class="bg-teles-black text-white p-8 rounded-lg shadow-xl hover:shadow-2xl transition duration-300 border border-gray-800 flex flex-col relative">
+                    <div class="absolute top-0 right-0 bg-yellow-600 text-white text-xs font-bold px-3 py-1 rounded-bl-lg uppercase tracking-wide">Elite</div>
+                    <h3 class="font-display text-2xl font-bold mb-2 text-teles-tiffany">PLANO BLACK</h3>
+                    <p class="text-gray-400 text-sm mb-6">A experiência completa.</p>
+                    <div class="text-4xl font-bold mb-6">R$ 164,99<span class="text-base font-normal text-gray-400">/mês</span></div>
+                    
+                    <ul class="space-y-4 mb-8 flex-grow">
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-star text-yellow-500"></i> Corte + Barba Ilimitados
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-check text-teles-tiffany"></i> Sobrancelha inclusa
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-check text-teles-tiffany"></i> Preferência total na agenda
+                        </li>
+                    </ul>
+
+                    <a href="https://sites.appbarber.com.br/assinar?e=telesbarbearia-vfg1" class="block w-full text-center bg-transparent border border-teles-tiffany text-teles-tiffany py-3 rounded font-bold hover:bg-teles-tiffany hover:text-black transition duration-300">ASSINAR AGORA</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Especialidade: Prótese Capilar -->
+    <section class="py-20 bg-teles-dark relative overflow-hidden">
+        <!-- Elemento decorativo de fundo -->
+        <div class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
+             <img src="https://lh3.googleusercontent.com/oGqM728GW0JLy0WrDkedMPscKIPUJ9ZVMAig0kRXOT2VNoXujj0Auef3EVapsgEWZ1SKa0uOQpnyM-URnQ=s265-w265-h265" class="w-full h-full object-cover grayscale">
+        </div>
+
+        <div class="container mx-auto px-4 relative z-10 flex flex-col md:flex-row items-center gap-12">
+            <div class="md:w-1/2">
+                <div class="relative">
+                    <img src="https://lh3.googleusercontent.com/0d7QImqVhtgH7UpUp53hVYVY_NOUI0ep3n6O6Y35eqC64QIf6tcpmvTmLuHds0JMAUrLWOxSafDFSOGSwg=s265-w265-h265" alt="Especialista em Prótese" class="rounded-lg shadow-2xl border-2 border-teles-tiffany w-full max-w-md mx-auto grayscale hover:grayscale-0 transition duration-500">
+                    <div class="absolute -bottom-6 -right-6 bg-teles-tiffany text-black p-4 rounded shadow-lg hidden md:block">
+                        <p class="font-bold font-display text-xl">DENNER TELES</p>
+                        <p class="text-sm">Referência na área</p>
+                    </div>
+                </div>
+            </div>
+            <div class="md:w-1/2 text-left">
+                <span class="text-teles-tiffany font-bold tracking-widest uppercase mb-2 block">Especialidade Exclusiva</span>
+                <h2 class="font-display text-4xl md:text-5xl font-bold text-white mb-6">PRÓTESE CAPILAR</h2>
+                <p class="text-gray-300 text-lg mb-8 leading-relaxed">
+                    Recupere sua autoestima com naturalidade e perfeição. Somos referência em aplicação e manutenção de próteses capilares, utilizando técnicas avançadas para um resultado imperceptível.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="https://wa.me/5562991580263?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20a%20pr%C3%B3tese%20capilar" class="btn-primary bg-teles-tiffany text-black px-8 py-3 rounded font-bold inline-flex items-center justify-center gap-2">
+                        <i class="fab fa-whatsapp"></i> Orçamento Personalizado
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galeria -->
+    <section class="py-20 bg-black">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="font-display text-3xl text-white font-bold">NOSSO ESPAÇO</h2>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="overflow-hidden rounded-lg h-64 group">
+                    <img src="https://lh3.googleusercontent.com/uFkFntA5yQhEG4NdyJynJh4zizhCaSPs9uYflwujhkgELlKQ3BlvQ-F_5uiIVQ7CqQVZmxXIhZ0o8IMy5g=s265-w265-h265" alt="Fachada" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+                </div>
+                <div class="overflow-hidden rounded-lg h-64 group">
+                    <img src="https://lh3.googleusercontent.com/sB8E9wjrSqWpAWgGtFDHYySD7LIh4yC9XGcbyjBTsMyJao7cRSxdhD20mMYqtq0SLgcgjsqhIOBcId5YWw=s265-w265-h265" alt="Interior 1" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+                </div>
+                <div class="overflow-hidden rounded-lg h-64 group">
+                    <img src="https://lh3.googleusercontent.com/oGqM728GW0JLy0WrDkedMPscKIPUJ9ZVMAig0kRXOT2VNoXujj0Auef3EVapsgEWZ1SKa0uOQpnyM-URnQ=s265-w265-h265" alt="Interior 2" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+                </div>
+                <div class="overflow-hidden rounded-lg h-64 group">
+                    <img src="https://lh3.googleusercontent.com/0d7QImqVhtgH7UpUp53hVYVY_NOUI0ep3n6O6Y35eqC64QIf6tcpmvTmLuHds0JMAUrLWOxSafDFSOGSwg=s265-w265-h265" alt="Interior 3" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Depoimentos / Avaliações -->
+    <section class="py-20 bg-teles-cream text-teles-black">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col items-center justify-center mb-12">
+                <div class="flex items-center gap-2 mb-2">
+                    <span class="text-4xl font-bold">4.9</span>
+                    <div class="flex text-yellow-500 text-xl">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <p class="text-gray-600 font-medium">Baseado em 292 avaliações no Google</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Review 1 -->
+                <div class="bg-white p-6 rounded-xl shadow-md border border-gray-100">
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center font-bold text-gray-600">DL</div>
+                        <div>
+                            <p class="font-bold text-sm">Daniel Luiz</p>
+                            <div class="text-yellow-500 text-xs">★★★★★</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"Ótimo ambiente, boa recepção e profissionais excelentes, corto mais de 3 anos"</p>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="bg-white p-6 rounded-xl shadow-md border border-gray-100">
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center font-bold text-gray-600">EA</div>
+                        <div>
+                            <p class="font-bold text-sm">Elias Alves</p>
+                            <div class="text-yellow-500 text-xs">★★★★★</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"Show de bola, galera alegre e excelência no profissionalismo..."</p>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="bg-white p-6 rounded-xl shadow-md border border-gray-100">
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center font-bold text-gray-600">DC</div>
+                        <div>
+                            <p class="font-bold text-sm">Danillo Coelho</p>
+                            <div class="text-yellow-500 text-xs">★★★★★</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"Trabalho, energia e receptividade excelente. 2 vezes na semana, estamos juntos!"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Localização e Mapa -->
+    <section class="relative bg-teles-dark py-0 flex flex-col-reverse md:flex-row">
+        <!-- Mapa -->
+        <div class="w-full md:w-1/2 h-96 md:h-auto min-h-[400px]">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3822.378931123456!2d-49.2782!3d-16.6575!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTbCsDM5JzI3LjAiUyA0OcKwMTYnNDEuNSJX!5e0!3m2!1spt-BR!2sbr!4v1600000000000!5m2!1spt-BR!2sbr" 
+                width="100%" 
+                height="100%" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                class="grayscale hover:grayscale-0 transition duration-500">
+            </iframe>
+        </div>
+
+        <!-- Info -->
+        <div class="w-full md:w-1/2 p-10 md:p-20 flex flex-col justify-center bg-teles-black text-white">
+            <h2 class="font-display text-3xl font-bold mb-8 text-teles-tiffany">ONDE ESTAMOS</h2>
+            
+            <div class="space-y-6">
+                <div class="flex items-start gap-4">
+                    <i class="fas fa-map-marker-alt text-teles-tiffany text-xl mt-1"></i>
+                    <div>
+                        <h4 class="font-bold">Endereço</h4>
+                        <p class="text-gray-400">Av. Rio Branco, 649 - Quadra 03 Lote 05</p>
+                        <p class="text-gray-400">St. Urias Magalhães, Goiânia - GO, 74565-070</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-4">
+                    <i class="fas fa-phone-alt text-teles-tiffany text-xl mt-1"></i>
+                    <div>
+                        <h4 class="font-bold">Telefone</h4>
+                        <p class="text-gray-400">(62) 99158-0263</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-4">
+                    <i class="fas fa-clock text-teles-tiffany text-xl mt-1"></i>
+                    <div>
+                        <h4 class="font-bold">Horário</h4>
+                        <p class="text-green-500 font-medium">Aberto agora · Fecha às 20:00</p>
+                    </div>
+                </div>
+
+                <a href="https://www.google.com/maps/dir//Teles+Barbearia+Av.+Rio+Branco,+649+-+St.+Urias+Magalh%C3%A3es,+Goi%C3%A2nia+-+GO" target="_blank" class="inline-block mt-4 bg-white text-black px-6 py-3 rounded font-bold hover:bg-teles-tiffany transition duration-300">
+                    <i class="fas fa-location-arrow mr-2"></i> COMO CHEGAR
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer class="bg-black text-white border-t border-gray-800 pt-12 pb-6">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-8">
+                <div class="mb-6 md:mb-0 text-center md:text-left">
+                    <span class="font-display font-bold text-2xl tracking-wider text-teles-cream">TELES<span class="text-teles-tiffany">BARBEARIA</span></span>
+                    <p class="text-gray-500 text-sm mt-2">Elevando seu estilo desde 2006.</p>
+                </div>
+                
+                <div class="flex gap-4">
+                    <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-teles-tiffany hover:text-black transition duration-300">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-600 hover:text-white transition duration-300">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://wa.me/5562991580263" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-green-500 hover:text-white transition duration-300">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-6 text-center text-gray-600 text-sm">
+                <p>&copy; 2024 Teles Barbearia. Todos os direitos reservados.</p>
+                <p class="mt-2 text-xs">Desenvolvido com excelência.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
