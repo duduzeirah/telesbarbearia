@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teles Barbearia - Links</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Oswald:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Configuração de Cores (Igual ao Site Principal) -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        teles: {
+                            black: '#0a0a0a',
+                            dark: '#141414',
+                            gray: '#222222',
+                            tiffany: '#0ABAB5',
+                            tiffanyDark: '#089691',
+                            cream: '#F5F1E6'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                        display: ['Oswald', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Fundo com Textura Noise */
+        .bg-noise {
+            position: relative;
+            background-color: #0a0a0a;
+            min-height: 100vh;
+        }
+        .bg-noise::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        /* Efeito de Vidro nos Botões */
+        .glass-btn {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-btn:hover {
+            background: rgba(10, 186, 181, 0.1);
+            border-color: #0ABAB5;
+            transform: scale(1.02);
+            box-shadow: 0 0 20px rgba(10, 186, 181, 0.2);
+        }
+
+        /* Avatar com borda brilhante */
+        .avatar-glow {
+            box-shadow: 0 0 30px rgba(10, 186, 181, 0.3);
+        }
+    </style>
+</head>
+<body class="antialiased text-white bg-noise flex flex-col items-center justify-center py-12 px-4 relative">
+    
+    <!-- Background Decorativo -->
+    <div class="fixed top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0">
+        <div class="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-teles-tiffany/5 rounded-full blur-[120px]"></div>
+        <div class="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-teles-tiffany/5 rounded-full blur-[120px]"></div>
+    </div>
+
+    <main class="w-full max-w-md relative z-10 flex flex-col items-center animate-fade-in-up">
+        
+        <!-- Perfil -->
+        <div class="mb-8 text-center">
+            <div class="relative inline-block mb-4">
+                <div class="w-32 h-32 rounded-full p-1 border-2 border-teles-tiffany avatar-glow bg-black/50 overflow-hidden">
+                    <img src="https://lh3.googleusercontent.com/IpkS-fQYuQW1yG3udJrmeTE-xzpnNO8nrHK-2JWwmna4f36LGWs33yuyUptvTb6FIh1_-zGCNfcmSf_1XA=s265-w265-h265" alt="Teles Barbearia" class="w-full h-full object-cover rounded-full grayscale hover:grayscale-0 transition duration-500">
+                </div>
+                <!-- Ícone de verificado opcional -->
+                <div class="absolute bottom-2 right-2 bg-teles-tiffany text-black rounded-full w-6 h-6 flex items-center justify-center text-xs border-2 border-black">
+                    <i class="fas fa-check"></i>
+                </div>
+            </div>
+            
+            <h1 class="font-display font-bold text-3xl tracking-wide mb-1">TELES BARBEARIA</h1>
+            <p class="text-gray-400 font-sans text-sm tracking-widest uppercase mb-4">Desde 2012 • Goiânia</p>
+            <p class="text-gray-500 text-sm max-w-xs mx-auto leading-relaxed">Especialistas em cortes, barba terapia e prótese capilar de alto padrão.</p>
+        </div>
+
+        <!-- Links -->
+        <div class="w-full space-y-4">
+            
+            <!-- WhatsApp (Destaque Principal) -->
+            <a href="https://wa.me/5562991580263" target="_blank" class="glass-btn w-full p-4 rounded-xl flex items-center justify-between group bg-teles-tiffany/10 border-teles-tiffany/50">
+                <div class="w-10 h-10 bg-teles-tiffany/20 rounded-full flex items-center justify-center text-teles-tiffany group-hover:bg-teles-tiffany group-hover:text-black transition duration-300">
+                    <i class="fab fa-whatsapp text-xl"></i>
+                </div>
+                <span class="font-bold font-display uppercase tracking-wider">Agendar no WhatsApp</span>
+                <i class="fas fa-arrow-right text-teles-tiffany group-hover:translate-x-1 transition duration-300"></i>
+            </a>
+
+            <!-- Site Oficial -->
+            <a href="https://telesbarbearia.com.br" target="_blank" class="glass-btn w-full p-4 rounded-xl flex items-center justify-between group">
+                <div class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center text-white group-hover:bg-white group-hover:text-black transition duration-300">
+                    <i class="fas fa-globe text-xl"></i>
+                </div>
+                <span class="font-bold font-display uppercase tracking-wider text-gray-200 group-hover:text-white">Acesse Nosso Site</span>
+                <i class="fas fa-arrow-right text-gray-500 group-hover:text-white group-hover:translate-x-1 transition duration-300"></i>
+            </a>
+
+            <!-- App de Agendamento (Opcional, mas útil) -->
+            <a href="https://sites.appbarber.com.br/assinar?e=telesbarbearia-vfg1" target="_blank" class="glass-btn w-full p-4 rounded-xl flex items-center justify-between group">
+                <div class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center text-white group-hover:bg-white group-hover:text-black transition duration-300">
+                    <i class="fas fa-calendar-check text-xl"></i>
+                </div>
+                <span class="font-bold font-display uppercase tracking-wider text-gray-200 group-hover:text-white">Clube de Assinatura</span>
+                <i class="fas fa-arrow-right text-gray-500 group-hover:text-white group-hover:translate-x-1 transition duration-300"></i>
+            </a>
+
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/teles_barbearia/" target="_blank" class="glass-btn w-full p-4 rounded-xl flex items-center justify-between group">
+                <div class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center text-white group-hover:bg-gradient-to-tr group-hover:from-yellow-400 group-hover:via-red-500 group-hover:to-purple-500 transition duration-300">
+                    <i class="fab fa-instagram text-xl"></i>
+                </div>
+                <span class="font-bold font-display uppercase tracking-wider text-gray-200 group-hover:text-white">Instagram</span>
+                <i class="fas fa-arrow-right text-gray-500 group-hover:text-white group-hover:translate-x-1 transition duration-300"></i>
+            </a>
+
+            <!-- Localização -->
+            <a href="https://www.google.com/maps/dir//Teles+Barbearia+Av.+Rio+Branco,+649+-+St.+Urias+Magalh%C3%A3es,+Goi%C3%A2nia+-+GO" target="_blank" class="glass-btn w-full p-4 rounded-xl flex items-center justify-between group">
+                <div class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center text-white group-hover:bg-blue-500 group-hover:text-white transition duration-300">
+                    <i class="fas fa-map-marker-alt text-xl"></i>
+                </div>
+                <div class="flex flex-col text-left">
+                    <span class="font-bold font-display uppercase tracking-wider text-gray-200 group-hover:text-white">Como Chegar</span>
+                    <span class="text-[10px] text-gray-500 font-sans uppercase">St. Urias Magalhães</span>
+                </div>
+                <i class="fas fa-arrow-right text-gray-500 group-hover:text-white group-hover:translate-x-1 transition duration-300"></i>
+            </a>
+
+        </div>
+
+        <!-- Footer -->
+        <footer class="mt-12 text-center opacity-50 text-xs uppercase tracking-widest font-sans">
+            <p>&copy; 2024 Teles Barbearia</p>
+        </footer>
+
+    </main>
+
+</body>
+</html>
