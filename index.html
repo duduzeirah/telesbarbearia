@@ -169,9 +169,8 @@
                 </a>
             </div>
             
-            <div class="mt-12 flex justify-center items-center gap-2 text-white/50 text-sm font-mono">
-                <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-                <span>Barbearia aberta agora</span>
+            <div id="status-horario" class="mt-12 flex justify-center items-center gap-2 text-white/50 text-sm font-mono">
+                <!-- Preenchido via JavaScript -->
             </div>
         </div>
     </header>
@@ -482,5 +481,40 @@
         </div>
     </footer>
 
+    <script>
+        function checkStatus() {
+            const agora = new Date();
+            const dia = agora.getDay(); // 0 (Dom) a 6 (Sab)
+            const hora = agora.getHours();
+            const minutos = agora.getMinutes();
+            const tempoTotal = hora + minutos / 60;
+            
+            let aberto = false;
+            const container = document.getElementById('status-horario');
+
+            // Segunda (1) a Sexta (5): 08:00 às 19:00
+            if (dia >= 1 && dia <= 5) {
+                if (tempoTotal >= 8 && tempoTotal < 19) aberto = true;
+            } 
+            // Sábado (6): 08:00 às 17:00
+            else if (dia === 6) {
+                if (tempoTotal >= 8 && tempoTotal < 17) aberto = true;
+            }
+
+            if (aberto) {
+                container.innerHTML = `
+                    <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                    <span>Barbearia aberta agora</span>
+                `;
+            } else {
+                container.innerHTML = `
+                    <span class="w-2 h-2 rounded-full bg-red-500"></span>
+                    <span>Barbearia fechada no momento</span>
+                `;
+            }
+        }
+        
+        window.onload = checkStatus;
+    </script>
 </body>
 </html>
