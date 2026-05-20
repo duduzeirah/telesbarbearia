@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teles Barbearia | Prótese Capilar Premium</title>
+    <meta name="description" content="Volte a ter cabelo, confiança e naturalidade. Próteses capilares masculinas premium com efeito natural, fixação segura e cabelos 100% humanos na Teles Barbearia.">
+    
+    <!-- Google Fonts: Cinzel for the exact elegant logo style, Montserrat for premium body text -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                        logo: ['Cinzel', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#0a0a0a',      /* Fundo principal idêntico ao logo escuro */
+                            gray: '#121212',      /* Fundo secundário para contraste */
+                            light: '#f5f5f5',     /* Texto principal */
+                            gold: '#d4af37',      /* Dourado premium */
+                            goldLight: '#f3e5ab', /* Dourado claro */
+                            goldDark: '#aa8c2c',  /* Dourado escuro */
+                            whatsapp: '#25D366',
+                        }
+                    },
+                    animation: {
+                        'float': 'float 3s ease-in-out infinite',
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0a0a0a;
+            color: #f5f5f5;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        .gold-gradient-text {
+            background: linear-gradient(to right, #d4af37, #f3e5ab, #d4af37);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .gold-gradient-bg {
+            background: linear-gradient(135deg, #d4af37 0%, #aa8c2c 100%);
+        }
+
+        .glass-card {
+            background: rgba(18, 18, 18, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+        }
+
+        .faq-answer {
+            transition: all 0.3s ease-in-out;
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+        }
+        
+        .faq-answer.open {
+            max-height: 500px;
+            opacity: 1;
+            margin-top: 1rem;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 1rem;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+        .video-container iframe, .video-container video, .video-container img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        /* Estilo idêntico ao logotipo enviado */
+        .logo-text {
+            font-family: 'Cinzel', serif;
+            letter-spacing: 0.25em;
+        }
+        .logo-subtext {
+            font-family: 'Cinzel', serif;
+            letter-spacing: 0.15em;
+            font-size: 0.55rem;
+        }
+    </style>
+</head>
+<body class="relative">
+
+    <!-- Header -->
+    <header class="fixed w-full z-50 transition-all duration-300 glass-card border-b border-white/5" id="navbar">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            
+            <!-- LOGOTIPO DA IMAGEM RECONSTRUÍDO EM VETOR/CSS -->
+            <a href="#" class="flex flex-col items-center justify-center text-center group">
+                <!-- Se preferir usar o arquivo de imagem diretamente, remova o comentário abaixo e apague a div do texto -->
+                <!-- <img src="logotipo png.jpg" alt="Teles Barbearia" class="h-12 w-auto"> -->
+                
+                <div class="logo-container text-white transition-colors duration-300 group-hover:text-brand-gold">
+                    <span class="logo-text text-xl md:text-2xl font-normal block leading-none">TELES</span>
+                    <span class="logo-subtext block text-right text-gray-300 uppercase leading-none mt-1">BARBEARIA</span>
+                </div>
+            </a>
+            
+            <div class="flex items-center gap-4">
+                <a href="https://www.instagram.com/teles_barbearia/" target="_blank" class="text-white hover:text-brand-gold text-xl transition-colors duration-300" title="Siga nosso Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="#agendar" class="hidden md:flex items-center gap-2 border border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-brand-dark px-5 py-2 rounded-full transition-colors duration-300 text-sm font-semibold">
+                    <i class="fa-brands fa-whatsapp"></i> Agendar Avaliação
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden flex items-center min-h-[90vh]">
+        <!-- Subtle Background Elements -->
+        <div class="absolute top-0 left-0 w-full h-full bg-[url('https://images.unsplash.com/photo-1585747860715-2ba37e788b70?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')] bg-cover bg-center opacity-10 mix-blend-overlay"></div>
+        <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-gold/5 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2"></div>
+        
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+                
+                <!-- Text Content -->
+                <div class="w-full lg:w-1/2 space-y-8">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-brand-gold/30 bg-brand-gold/5 text-brand-gold text-xs font-semibold uppercase tracking-wider">
+                        <i class="fa-solid fa-star text-[10px]"></i> Especialistas em Autoestima
+                    </div>
+                    
+                    <h1 class="font-serif text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-white">
+                        Volte a ter cabelo, <span class="gold-gradient-text italic">confiança</span> e naturalidade.
+                    </h1>
+                    
+                    <p class="text-brand-light/80 text-lg md:text-xl font-light leading-relaxed">
+                        Próteses capilares premium com <strong class="text-white font-medium">efeito natural</strong>, fixação segura e cabelos 100% humanos. A transformação de autoestima que você procura na <strong class="text-white">Teles Barbearia</strong>.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                        <a href="#agendar" class="gold-gradient-bg text-brand-dark font-bold text-center px-8 py-4 rounded-full hover:scale-105 transition-transform duration-300 shadow-[0_0_20px_rgba(212,175,55,0.4)] flex items-center justify-center gap-3">
+                            <i class="fa-brands fa-whatsapp text-xl"></i> Quero fazer minha avaliação
+                        </a>
+                    </div>
+                    
+                    <!-- Trust Indicators -->
+                    <div class="flex flex-wrap items-center gap-6 pt-6 border-t border-brand-gold/20">
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-clock-rotate-left text-brand-gold text-xl"></i>
+                            <span class="text-sm text-brand-light/70"><strong class="text-white">15+ anos</strong> de experiência</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-user-tie text-brand-gold text-xl"></i>
+                            <span class="text-sm text-brand-light/70">Protético <strong class="text-white">Especializado</strong></span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-handshake text-brand-gold text-xl"></i>
+                            <span class="text-sm text-brand-light/70">Atendimento <strong class="text-white">Personalizado</strong></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video Principal / Main Visual -->
+                <div class="w-full lg:w-1/2 relative">
+                    <div class="absolute -inset-4 border border-brand-gold/20 rounded-2xl hidden md:block"></div>
+                    
+                    <div class="video-container relative z-10 bg-brand-gray rounded-2xl overflow-hidden group">
+                        
+                        <!-- ========================================================================= -->
+                        <!-- ⚠️ LOCAL EXATO PARA O VÍDEO PRINCIPAL DO INSTAGRAM OU LINK DE VÍDEO ⚠️ -->
+                        <!-- Para colocar o embed do Instagram: substitua a tag <img /> abaixo pelo código <iframe> fornecido pelo Instagram -->
+                        <!-- ========================================================================= -->
+                        
+                        <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Demonstração Prótese Capilar Premium" class="opacity-80 group-hover:scale-105 transition-transform duration-700">
+                        
+                        <!-- Ícone de Play para indicar que é um vídeo da transformação -->
+                        <div class="absolute inset-0 flex items-center justify-center bg-black/40">
+                            <a href="#agendar" class="w-20 h-20 bg-brand-gold/90 rounded-full flex items-center justify-center cursor-pointer hover:bg-brand-gold transition-all duration-300 animate-pulse-slow shadow-[0_0_30px_rgba(212,175,55,0.6)]">
+                                <i class="fa-solid fa-play text-brand-dark text-3xl ml-2"></i>
+                            </a>
+                        </div>
+
+                        <!-- Mini tags explicativas -->
+                        <div class="absolute bottom-4 left-4 bg-brand-dark/90 backdrop-blur-sm text-xs font-semibold px-3 py-1.5 rounded-full text-brand-gold border border-brand-gold/30">
+                            <i class="fa-solid fa-rotate mr-1"></i> Antes e Depois
+                        </div>
+                        <div class="absolute bottom-4 right-4 bg-brand-dark/90 backdrop-blur-sm text-xs font-semibold px-3 py-1.5 rounded-full text-brand-gold border border-brand-gold/30">
+                            <i class="fa-solid fa-scissors mr-1"></i> Trabalho Real
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SOCIAL PROOF SECTION -->
+    <section class="py-20 bg-brand-gray relative" id="resultados">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 space-y-4">
+                <h3 class="text-brand-gold text-sm font-bold uppercase tracking-widest">A Opinião de Quem Já Mudou</h3>
+                <h2 class="font-serif text-3xl md:text-5xl font-bold text-white">Transformação e <span class="italic text-brand-gold">Autoestima</span></h2>
+                <p class="text-brand-light/70 max-w-2xl mx-auto">Vejas depoimentos humanizados de clientes reais da Teles Barbearia que voltaram a sorrir na frente do espelho.</p>
+            </div>
+
+            <!-- Quotes / Testimonials -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
+                <!-- Depoimento 1 -->
+                <div class="glass-card p-8 rounded-2xl relative">
+                    <i class="fa-solid fa-quote-left text-brand-gold/10 text-5xl absolute top-4 left-4"></i>
+                    <p class="text-brand-light relative z-10 italic leading-relaxed mb-6">"Eu voltei a me sentir bem comigo mesmo. Olhar no espelho e ver o meu rosto moldado novamente não tem preço."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-brand-gold/20 flex items-center justify-center text-brand-gold font-bold">R</div>
+                        <div>
+                            <p class="text-white font-semibold text-sm">Cliente Satisfeito</p>
+                            <p class="text-brand-gold text-xs">Resultado Real</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Depoimento 2 -->
+                <div class="glass-card p-8 rounded-2xl relative">
+                    <i class="fa-solid fa-quote-left text-brand-gold/10 text-5xl absolute top-4 left-4"></i>
+                    <p class="text-brand-light relative z-10 italic leading-relaxed mb-6">"Ninguém percebe que estou usando. Já fui para a academia, treino firme e a fixação é incrível. Mudou minha rotina."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-brand-gold/20 flex items-center justify-center text-brand-gold font-bold">M</div>
+                        <div>
+                            <p class="text-white font-semibold text-sm">Marcos V.</p>
+                            <p class="text-brand-gold text-xs">Cliente Teles</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Depoimento 3 -->
+                <div class="glass-card p-8 rounded-2xl relative">
+                    <i class="fa-solid fa-quote-left text-brand-gold/10 text-5xl absolute top-4 left-4"></i>
+                    <p class="text-brand-light relative z-10 italic leading-relaxed mb-6">"Minha autoestima mudou completamente. O atendimento privado me deu segurança do início ao fim."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-brand-gold/20 flex items-center justify-center text-brand-gold font-bold">L</div>
+                        <div>
+                            <p class="text-white font-semibold text-sm">Leandro K.</p>
+                            <p class="text-brand-gold text-xs">Visual Renovado</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ANTES E DEPOIS - 6 FOTOS DO INSTAGRAM -->
+            <div class="mb-8 flex items-center justify-between border-l-4 border-brand-gold pl-4">
+                <div>
+                    <h4 class="text-2xl font-bold text-white">Antes e Depois Reais</h4>
+                    <p class="text-brand-light/50 text-sm mt-1">Toque na imagem para ampliar ou agendar o seu modelo idêntico</p>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 mb-20">
+                
+                <!-- ========================================================================= -->
+                <!-- ⚠️ LUGARES EXATOS PARA FOTOS DE ANTES E DEPOIS DO INSTAGRAM ⚠️ -->
+                <!-- Substitua o link de "src" pela URL direta das suas fotos do Instagram -->
+                <!-- ========================================================================= -->
+
+                <!-- Foto 1 -->
+                <div class="relative overflow-hidden rounded-xl border border-brand-gold/15 hover:border-brand-gold/70 transition-all duration-300 group">
+                    <!-- [Foto de Antes e Depois de Prótese Capilar - Teles Barbearia] -->
+                    <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Resultado de Prótese Capilar 1" class="w-full h-72 object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black via-black/40 to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity flex justify-between items-center">
+                        <span class="text-white text-xs font-bold">Teles Barbearia</span>
+                        <a href="#agendar" class="text-brand-gold text-xs font-bold hover:underline">Quero esse <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Foto 2 -->
+                <div class="relative overflow-hidden rounded-xl border border-brand-gold/15 hover:border-brand-gold/70 transition-all duration-300 group">
+                    <!-- [Foto de Antes e Depois 2] -->
+                    <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Resultado de Prótese Capilar 2" class="w-full h-72 object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black via-black/40 to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity flex justify-between items-center">
+                        <span class="text-white text-xs font-bold">Teles Barbearia</span>
+                        <a href="#agendar" class="text-brand-gold text-xs font-bold hover:underline">Quero esse <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Foto 3 -->
+                <div class="relative overflow-hidden rounded-xl border border-brand-gold/15 hover:border-brand-gold/70 transition-all duration-300 group">
+                    <!-- [Foto de Antes e Depois 3] -->
+                    <img src="https://images.unsplash.com/photo-1605497746444-ac9dbd39f4a5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Resultado de Prótese Capilar 3" class="w-full h-72 object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black via-black/40 to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity flex justify-between items-center">
+                        <span class="text-white text-xs font-bold">Teles Barbearia</span>
+                        <a href="#agendar" class="text-brand-gold text-xs font-bold hover:underline">Quero esse <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Foto 4 -->
+                <div class="relative overflow-hidden rounded-xl border border-brand-gold/15 hover:border-brand-gold/70 transition-all duration-300 group">
+                    <!-- [Foto de Antes e Depois 4] -->
+                    <img src="https://images.unsplash.com/photo-1517832606299-7ae9b720a186?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Resultado de Prótese Capilar 4" class="w-full h-72 object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black via-black/40 to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity flex justify-between items-center">
+                        <span class="text-white text-xs font-bold">Teles Barbearia</span>
+                        <a href="#agendar" class="text-brand-gold text-xs font-bold hover:underline">Quero esse <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Foto 5 -->
+                <div class="relative overflow-hidden rounded-xl border border-brand-gold/15 hover:border-brand-gold/70 transition-all duration-300 group">
+                    <!-- [Foto de Antes e Depois 5] -->
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Resultado de Prótese Capilar 5" class="w-full h-72 object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black via-black/40 to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity flex justify-between items-center">
+                        <span class="text-white text-xs font-bold">Teles Barbearia</span>
+                        <a href="#agendar" class="text-brand-gold text-xs font-bold hover:underline">Quero esse <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Foto 6 -->
+                <div class="relative overflow-hidden rounded-xl border border-brand-gold/15 hover:border-brand-gold/70 transition-all duration-300 group">
+                    <!-- [Foto de Antes e Depois 6] -->
+                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Resultado de Prótese Capilar 6" class="w-full h-72 object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black via-black/40 to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity flex justify-between items-center">
+                        <span class="text-white text-xs font-bold">Teles Barbearia</span>
+                        <a href="#agendar" class="text-brand-gold text-xs font-bold hover:underline">Quero esse <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- VÍDEOS DE CLIENTES (4 VÍDEOS REELS/INSTAGRAM) -->
+            <div class="mb-8 flex items-center justify-between border-l-4 border-brand-gold pl-4">
+                <div>
+                    <h4 class="text-2xl font-bold text-white">Vídeos Reais e Reações</h4>
+                    <p class="text-brand-light/50 text-sm mt-1">Veja a reação emocionante de quem recuperou o cabelo na hora.</p>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+                
+                <!-- ========================================================================= -->
+                <!-- ⚠️ LUGARES EXATOS PARA OS VÍDEOS (FORMATO REELS) DO INSTAGRAM ⚠️ -->
+                <!-- Substitua o "src" pela imagem de capa e use o link correto para o Reels se preferir! -->
+                <!-- Alternativa premium: Se tiver o código EMBED do instagram, cole-o no lugar do card. -->
+                <!-- ========================================================================= -->
+
+                <!-- Vídeo 1 (Reels) -->
+                <div class="relative rounded-xl overflow-hidden aspect-[9/16] bg-brand-dark group border border-brand-gold/10 hover:border-brand-gold/60 transition-all">
+                    <!-- [Capa de vídeo de reação de cliente 1] -->
+                    <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-500" alt="Reels 1">
+                    <div class="absolute inset-0 flex flex-col justify-between p-4 bg-gradient-to-t from-black/80 via-transparent to-transparent">
+                        <span class="bg-brand-gold/90 text-brand-dark font-black text-[9px] px-2 py-0.5 rounded-full w-max uppercase tracking-widest">Reels</span>
+                        <div class="flex items-center gap-2">
+                            <i class="fa-regular fa-circle-play text-3xl text-brand-gold/95 group-hover:scale-110 transition-transform"></i>
+                            <span class="text-xs text-white font-medium">Reação Cliente 1</span>
+                        </div>
+                    </div>
+                    <a href="https://www.instagram.com/teles_barbearia/" target="_blank" class="absolute inset-0 z-10"></a>
+                </div>
+
+                <!-- Vídeo 2 (Reels) -->
+                <div class="relative rounded-xl overflow-hidden aspect-[9/16] bg-brand-dark group border border-brand-gold/10 hover:border-brand-gold/60 transition-all">
+                    <!-- [Capa de vídeo de reação de cliente 2] -->
+                    <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-500" alt="Reels 2">
+                    <div class="absolute inset-0 flex flex-col justify-between p-4 bg-gradient-to-t from-black/80 via-transparent to-transparent">
+                        <span class="bg-brand-gold/90 text-brand-dark font-black text-[9px] px-2 py-0.5 rounded-full w-max uppercase tracking-widest">Reels</span>
+                        <div class="flex items-center gap-2">
+                            <i class="fa-regular fa-circle-play text-3xl text-brand-gold/95 group-hover:scale-110 transition-transform"></i>
+                            <span class="text-xs text-white font-medium">Aplicação Prática</span>
+                        </div>
+                    </div>
+                    <a href="https://www.instagram.com/teles_barbearia/" target="_blank" class="absolute inset-0 z-10"></a>
+                </div>
+
+                <!-- Vídeo 3 (Reels) -->
+                <div class="relative rounded-xl overflow-hidden aspect-[9/16] bg-brand-dark group border border-brand-gold/10 hover:border-brand-gold/60 transition-all">
+                    <!-- [Capa de vídeo de reação de cliente 3] -->
+                    <img src="https://images.unsplash.com/photo-1517832606299-7ae9b720a186?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-500" alt="Reels 3">
+                    <div class="absolute inset-0 flex flex-col justify-between p-4 bg-gradient-to-t from-black/80 via-transparent to-transparent">
+                        <span class="bg-brand-gold/90 text-brand-dark font-black text-[9px] px-2 py-0.5 rounded-full w-max uppercase tracking-widest">Reels</span>
+                        <div class="flex items-center gap-2">
+                            <i class="fa-regular fa-circle-play text-3xl text-brand-gold/95 group-hover:scale-110 transition-transform"></i>
+                            <span class="text-xs text-white font-medium">Close do Efeito Natural</span>
+                        </div>
+                    </div>
+                    <a href="https://www.instagram.com/teles_barbearia/" target="_blank" class="absolute inset-0 z-10"></a>
+                </div>
+
+                <!-- Vídeo 4 (Reels) -->
+                <div class="relative rounded-xl overflow-hidden aspect-[9/16] bg-brand-dark group border border-brand-gold/10 hover:border-brand-gold/60 transition-all">
+                    <!-- [Capa de vídeo de reação de cliente 4] -->
+                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-500" alt="Reels 4">
+                    <div class="absolute inset-0 flex flex-col justify-between p-4 bg-gradient-to-t from-black/80 via-transparent to-transparent">
+                        <span class="bg-brand-gold/90 text-brand-dark font-black text-[9px] px-2 py-0.5 rounded-full w-max uppercase tracking-widest">Reels</span>
+                        <div class="flex items-center gap-2">
+                            <i class="fa-regular fa-circle-play text-3xl text-brand-gold/95 group-hover:scale-110 transition-transform"></i>
+                            <span class="text-xs text-white font-medium">Corte & Modelagem</span>
+                        </div>
+                    </div>
+                    <a href="https://www.instagram.com/teles_barbearia/" target="_blank" class="absolute inset-0 z-10"></a>
+                </div>
+
+            </div>
+            
+            <div class="text-center mt-12">
+                 <a href="https://www.instagram.com/teles_barbearia/" target="_blank" class="inline-flex items-center gap-3 text-brand-gold hover:text-white font-medium border-b border-brand-gold/40 hover:border-brand-gold pb-1 transition-all">
+                    Ver mais transformações no nosso Instagram @teles_barbearia <i class="fa-brands fa-instagram text-lg ml-1"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOBRE A QUALIDADE -->
+    <section class="py-20 relative overflow-hidden">
+        <!-- Decoration background glow -->
+        <div class="absolute -left-[300px] top-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-gold/5 rounded-full blur-[100px]"></div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                
+                <!-- Imagem Curadoria e Atendimento -->
+                <div class="w-full lg:w-1/2">
+                    <div class="relative p-3 glass-card rounded-2xl">
+                        
+                        <!-- ========================================================================= -->
+                        <!-- ⚠️ LOCAL EXATO PARA A FOTO DO PROTÉTICO TRABALHANDO OU FOTO PREMIUM ⚠️ -->
+                        <!-- ========================================================================= -->
+                        <!-- [Foto do protético da Teles Barbearia selecionando cabelo para prótese] -->
+                        <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Qualidade das Próteses Teles" class="rounded-xl w-full object-cover aspect-[4/3] grayscale-[20%]">
+                        
+                        <!-- Quality Badge -->
+                        <div class="absolute -bottom-6 -right-6 bg-brand-gray border border-brand-gold/30 p-4 rounded-xl shadow-2xl flex items-center gap-4 hidden md:flex">
+                            <i class="fa-solid fa-medal text-brand-gold text-4xl"></i>
+                            <div>
+                                <p class="text-white font-bold leading-none">Padrão Teles</p>
+                                <p class="text-xs text-brand-light/60 mt-1">15 Anos de Fornecedor</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Text -->
+                <div class="w-full lg:w-1/2 space-y-6">
+                    <h3 class="text-brand-gold font-bold uppercase tracking-widest text-sm">Alta Qualidade e Rigor</h3>
+                    <h2 class="font-serif text-3xl md:text-4xl font-bold text-white leading-tight">Escolha meticulosa e exclusividade absoluta.</h2>
+                    <p class="text-brand-light/80 text-lg">
+                        Seu cabelo é a moldura do seu rosto. Por isso, a Teles Barbearia não aceita menos que a perfeição absoluta na escolha e preparo dos fios.
+                    </p>
+                    
+                    <ul class="space-y-4 mt-6">
+                        <li class="flex items-start gap-4">
+                            <div class="mt-1 min-w-[24px]"><i class="fa-solid fa-check text-brand-gold"></i></div>
+                            <p class="text-brand-light/90"><strong class="text-white">Mesmo Fornecedor há 15 anos:</strong> Uma parceria de confiança que garante apenas as melhores matérias-primas do mercado.</p>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="mt-1 min-w-[24px]"><i class="fa-solid fa-check text-brand-gold"></i></div>
+                            <p class="text-brand-light/90"><strong class="text-white">Curadoria Humana e Exclusiva:</strong> Nosso protético especializado escolhe pessoalmente e individualmente cada peça.</p>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="mt-1 min-w-[24px]"><i class="fa-solid fa-check text-brand-gold"></i></div>
+                            <p class="text-brand-light/90"><strong class="text-white">Cabelo 100% Humano:</strong> Fios naturais que acompanham o caimento e cor exatos do seu cabelo remanescente. <em>(Modelos grisalhos recebem fibra premium de alta qualidade para assegurar maior resistência e durabilidade da cor).</em></p>
+                        </li>
+                    </ul>
+
+                    <!-- Personalização Info -->
+                    <div class="mt-8 bg-brand-gold/5 border-l-2 border-brand-gold p-6 rounded-r-lg">
+                        <h4 class="text-white font-bold mb-2 flex items-center gap-2">
+                            <i class="fa-solid fa-fingerprint text-brand-gold"></i> Avaliação Sob Medida
+                        </h4>
+                        <p class="text-sm text-brand-light/80 leading-relaxed">
+                            Cada cliente tem um formato de rosto único, densidade capilar específica, textura e estilo particulares. Não usamos o mesmo padrão para todos. Sua avaliação é feita de forma exclusiva pelo nosso profissional.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOBRE A MICRO PELE -->
+    <section class="py-20 bg-brand-gray border-y border-brand-gold/10">
+        <div class="container mx-auto px-6 text-center">
+            <h3 class="text-brand-gold font-bold uppercase tracking-widest text-sm mb-4">A Tecnologia Mais Discreta</h3>
+            <h2 class="font-serif text-3xl md:text-4xl font-bold text-white mb-6">A revolução imperceptível da <span class="gold-gradient-text">Micro Pele</span></h2>
+            <p class="text-brand-light/70 max-w-2xl mx-auto mb-16">
+                Projetada para imitar com perfeição absoluta o couro cabeludo humano, oferecendo liberdade, conforto e invisibilidade total.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <!-- Card 1 -->
+                <div class="glass-card p-8 rounded-2xl text-center group hover:-translate-y-2 transition-transform duration-300">
+                    <div class="w-16 h-16 mx-auto bg-brand-gold/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-brand-gold/20 transition-colors">
+                        <i class="fa-solid fa-wind text-brand-gold text-2xl"></i>
+                    </div>
+                    <h4 class="text-white font-bold text-lg mb-3">Absoluto Conforto</h4>
+                    <p class="text-brand-light/70 text-sm">Material ultra respirável, macio e imperceptível no uso diário. Esqueça que está usando.</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="glass-card p-8 rounded-2xl text-center group hover:-translate-y-2 transition-transform duration-300">
+                    <div class="w-16 h-16 mx-auto bg-brand-gold/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-brand-gold/20 transition-colors">
+                        <i class="fa-solid fa-shield-halved text-brand-gold text-2xl"></i>
+                    </div>
+                    <h4 class="text-white font-bold text-lg mb-3">Fixação & Segurança</h4>
+                    <p class="text-brand-light/70 text-sm">Aderência de alta durabilidade com produtos premium de primeira linha. Treine, corra e tome banho sem receios.</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="glass-card p-8 rounded-2xl text-center group hover:-translate-y-2 transition-transform duration-300">
+                    <div class="w-16 h-16 mx-auto bg-brand-gold/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-brand-gold/20 transition-colors">
+                        <i class="fa-solid fa-eye-slash text-brand-gold text-2xl"></i>
+                    </div>
+                    <h4 class="text-white font-bold text-lg mb-3">Aparência Invisível</h4>
+                    <p class="text-brand-light/70 text-sm">Espessura milimétrica e translúcida que se funde com a pele, proporcionando discrição em qualquer iluminação.</p>
+                </div>
+            </div>
+            
+            <p class="mt-12 text-xs text-brand-light/40 italic">*A indicação ideal da prótese em Micro Pele é definida pelo protético após a sua avaliação personalizada.</p>
+        </div>
+    </section>
+
+    <!-- SOBRE O PROCEDIMENTO -->
+    <section class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h3 class="text-brand-gold font-bold uppercase tracking-widest text-sm mb-4">Seu Caminho Prático</h3>
+                <h2 class="font-serif text-3xl md:text-4xl font-bold text-white">Sua jornada de mudança em <span class="italic text-brand-gold">5 passos</span></h2>
+            </div>
+
+            <div class="relative">
+                <!-- Linha Guia em telas grandes -->
+                <div class="hidden lg:block absolute top-1/2 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-brand-gold/30 to-transparent -translate-y-1/2 z-0"></div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8 relative z-10">
+                    <!-- Step 1 -->
+                    <div class="text-center relative">
+                        <div class="w-14 h-14 mx-auto bg-brand-dark border border-brand-gold rounded-full flex items-center justify-center text-lg font-bold text-brand-gold mb-4 shadow-[0_0_15px_rgba(212,175,55,0.2)]">
+                            1
+                        </div>
+                        <h4 class="text-white font-bold mb-2 text-sm uppercase tracking-wider">Fotos no WhatsApp</h4>
+                        <p class="text-brand-light/70 text-xs leading-relaxed">Envie fotos simples de como está seu cabelo hoje para uma primeira análise rápida.</p>
+                    </div>
+                    <!-- Step 2 -->
+                    <div class="text-center relative">
+                        <div class="w-14 h-14 mx-auto bg-brand-dark border border-brand-gold rounded-full flex items-center justify-center text-lg font-bold text-brand-gold mb-4 shadow-[0_0_15px_rgba(212,175,55,0.2)]">
+                            2
+                        </div>
+                        <h4 class="text-white font-bold mb-2 text-sm uppercase tracking-wider">Avaliação</h4>
+                        <p class="text-brand-light/70 text-xs leading-relaxed">Agendamos uma conversa reservada e confortável no estúdio para entender seus objetivos.</p>
+                    </div>
+                    <!-- Step 3 -->
+                    <div class="text-center relative">
+                        <div class="w-14 h-14 mx-auto bg-brand-dark border border-brand-gold rounded-full flex items-center justify-center text-lg font-bold text-brand-gold mb-4 shadow-[0_0_15px_rgba(212,175,55,0.2)]">
+                            3
+                        </div>
+                        <h4 class="text-white font-bold mb-2 text-sm uppercase tracking-wider">A Prótese Ideal</h4>
+                        <p class="text-brand-light/70 text-xs leading-relaxed">Selecionamos juntos a prótese premium perfeita baseada na sua textura e densidade.</p>
+                    </div>
+                    <!-- Step 4 -->
+                    <div class="text-center relative">
+                        <div class="w-14 h-14 mx-auto bg-brand-dark border border-brand-gold rounded-full flex items-center justify-center text-lg font-bold text-brand-gold mb-4 shadow-[0_0_15px_rgba(212,175,55,0.2)]">
+                            4
+                        </div>
+                        <h4 class="text-white font-bold mb-2 text-sm uppercase tracking-wider">Colocação</h4>
+                        <p class="text-brand-light/70 text-xs leading-relaxed">O protético faz a aplicação minuciosa e integra com o corte do seu cabelo lateral.</p>
+                    </div>
+                    <!-- Step 5 -->
+                    <div class="text-center relative">
+                        <div class="w-14 h-14 mx-auto bg-brand-dark border-2 border-brand-gold rounded-full flex items-center justify-center text-lg font-bold text-brand-gold mb-4 shadow-[0_0_15px_rgba(212,175,55,0.4)] bg-brand-gold/10">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
+                        <h4 class="text-white font-bold mb-2 text-sm uppercase tracking-wider">Resultado</h4>
+                        <p class="text-brand-light/70 text-xs leading-relaxed">Sua imagem rejuvenescida, com visual natural e sua autoestima lá no topo!</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#agendar" class="inline-flex bg-white/5 hover:bg-white/10 text-white font-medium px-8 py-3 rounded-full border border-brand-gold/40 transition-all duration-300 gap-2 items-center text-sm">
+                    Agendar minha avaliação agora <i class="fa-brands fa-whatsapp text-brand-whatsapp text-lg ml-1"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOBRE A BARBEARIA -->
+    <section class="py-20 bg-brand-gray border-t border-brand-gold/10">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col-reverse lg:flex-row items-center gap-16">
+                
+                <!-- Detalhes e Diferenciais -->
+                <div class="w-full lg:w-1/2 space-y-6">
+                    <h3 class="text-brand-gold font-bold uppercase tracking-widest text-sm">Teles Barbearia</h3>
+                    <h2 class="font-serif text-3xl md:text-4xl font-bold text-white leading-tight">O espaço seguro, acolhedor e profissional que você merece.</h2>
+                    <p class="text-brand-light/80 text-lg">
+                        Sua privacidade é nossa prioridade absoluta. Oferecemos um atendimento estritamente humanizado em um ambiente estéril, moderno e confortável.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-6 mt-8">
+                        <div class="flex flex-col gap-2">
+                            <i class="fa-solid fa-couch text-brand-gold text-2xl"></i>
+                            <h4 class="text-white font-bold">Atendimento Privado</h4>
+                            <p class="text-brand-light/60 text-sm">Espaço exclusivo para garantir o seu sigilo e conforto.</p>
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <i class="fa-solid fa-hand-holding-medical text-brand-gold text-2xl"></i>
+                            <h4 class="text-white font-bold">Higiene Absoluta</h4>
+                            <p class="text-brand-light/60 text-sm">Equipamentos e cabine rigorosamente higienizados.</p>
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <i class="fa-solid fa-mug-hot text-brand-gold text-2xl"></i>
+                            <h4 class="text-white font-bold">Experiência Premium</h4>
+                            <p class="text-brand-light/60 text-sm">Conforto incomparável e café gourmet esperando por você.</p>
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <i class="fa-solid fa-id-card-clip text-brand-gold text-2xl"></i>
+                            <h4 class="text-white font-bold">Profissionalismo</h4>
+                            <p class="text-brand-light/60 text-sm">Especialistas formados e prontos para lhe ouvir.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Galeria do Ambiente / Fotos do Protético trabalhando -->
+                <div class="w-full lg:w-1/2">
+                    <div class="grid grid-cols-2 gap-4">
+                        
+                        <!-- ========================================================================= -->
+                        <!-- ⚠️ LUGARES EXATOS PARA AS FOTOS DO SEU AMBIENTE FÍSICO ⚠️ -->
+                        <!-- ========================================================================= -->
+
+                        <!-- Foto 1 Ambiente -->
+                        <!-- [Foto da cadeira de barbeiro e do interior da Teles Barbearia] -->
+                        <img src="https://images.unsplash.com/photo-1593728637731-073c683c3c78?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Espaço Teles Barbearia" class="w-full h-48 md:h-64 object-cover rounded-xl border border-brand-gold/15">
+                        
+                        <!-- Foto 2 Ambiente (Posicionada ligeiramente deslocada para efeito de design premium) -->
+                        <!-- [Foto detalhada dos instrumentos de corte e ambiente refinado] -->
+                        <img src="https://images.unsplash.com/photo-1512496015851-a1fbaf692a9c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Atendimento Premium Teles" class="w-full h-48 md:h-64 object-cover rounded-xl border border-brand-gold/15 mt-8">
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- NOVA SEÇÃO: LOCALIZAÇÃO -->
+    <section class="py-16 bg-brand-dark border-t border-brand-gold/10" id="localizacao">
+        <div class="container mx-auto px-6 max-w-5xl">
+            <div class="glass-card rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center gap-10 border border-brand-gold/20 shadow-[0_4px_30px_rgba(212,175,55,0.05)]">
+                
+                <!-- Icon and Text Info -->
+                <div class="w-full md:w-3/5 space-y-6 text-left">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-brand-gold/20 bg-brand-gold/5 text-brand-gold text-xs font-semibold tracking-wider">
+                        <i class="fa-solid fa-location-dot"></i> VENHA NOS VISITAR
+                    </div>
+                    <h3 class="font-serif text-2xl md:text-3xl font-bold text-white">Nossa Localização em Goiânia</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-map-location-dot text-brand-gold text-xl mt-1"></i>
+                            <div>
+                                <p class="text-white font-semibold">Endereço Oficial:</p>
+                                <p class="text-brand-light/85 text-base mt-1">
+                                    Avenida Rio Branco, Nº 649<br>
+                                    Setor Urias Magalhães, Goiânia - GO
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-circle-info text-brand-gold text-lg mt-0.5"></i>
+                            <p class="text-brand-light/60 text-sm">Oferecemos estacionamento e cabine reservada para o seu total sigilo e comodidade.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CTA para o Google Maps -->
+                <div class="w-full md:w-2/5 text-center flex flex-col items-center justify-center">
+                    <div class="w-20 h-20 bg-brand-gold/10 rounded-full flex items-center justify-center mb-6 border border-brand-gold/30">
+                        <i class="fa-solid fa-route text-brand-gold text-3xl"></i>
+                    </div>
+                    <p class="text-brand-light/80 text-sm mb-6 max-w-xs">Clique abaixo para abrir a rota no seu GPS e vir direto até nós.</p>
+                    <a href="https://maps.google.com/?q=Avenida+Rio+Branco+N+649+Setor+Urias+Magalhães+Goiânia+GO" target="_blank" class="w-full py-4 px-6 bg-brand-gold hover:bg-brand-goldDark text-brand-dark font-bold rounded-full transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:scale-105">
+                        <i class="fa-solid fa-map"></i> Abrir no Google Maps
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- QUEBRA DE OBJEÇÕES / FAQ -->
+    <section class="py-20 relative" id="faq">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <div class="text-center mb-16">
+                <h3 class="text-brand-gold font-bold uppercase tracking-widest text-sm mb-4">A clareza que traz segurança</h3>
+                <h2 class="font-serif text-3xl md:text-4xl font-bold text-white">Esclarecendo Todas as Dúvidas</h2>
+            </div>
+
+            <div class="space-y-4" id="faq-container">
+                <!-- FAQ 1 -->
+                <div class="glass-card rounded-xl border border-brand-gold/10 overflow-hidden">
+                    <button class="faq-btn w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none" onclick="toggleFaq(this)">
+                        <span class="font-bold text-white text-base md:text-lg">Vai ficar realmente natural? As pessoas percebem?</span>
+                        <i class="fa-solid fa-chevron-down text-brand-gold transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-0 text-brand-light/80">
+                        <p class="pb-5 text-sm leading-relaxed">Sim, fica extremamente natural! Nossa avaliação personalizada é feita justamente para selecionar uma prótese com densidade, textura de fios e cor idênticas às do seu cabelo lateral remanescente, com as técnicas da Micro Pele. É praticamente imperceptível ao olhar e ao toque.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="glass-card rounded-xl border border-brand-gold/10 overflow-hidden">
+                    <button class="faq-btn w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none" onclick="toggleFaq(this)">
+                        <span class="font-bold text-white text-base md:text-lg">Posso tomar banho, treinar e suar normalmente?</span>
+                        <i class="fa-solid fa-chevron-down text-brand-gold transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-0 text-brand-light/80">
+                        <p class="pb-5 text-sm leading-relaxed">Com certeza! Utilizamos adesivos e colas cirúrgicas de alta performance, dermatologicamente testadas e à prova d'água. Você pode continuar sua rotina de musculação, natação, corrida e banhos diários normalmente.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="glass-card rounded-xl border border-brand-gold/10 overflow-hidden">
+                    <button class="faq-btn w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none" onclick="toggleFaq(this)">
+                        <span class="font-bold text-white text-base md:text-lg">Quanto tempo dura a prótese?</span>
+                        <i class="fa-solid fa-chevron-down text-brand-gold transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-0 text-brand-light/80">
+                        <p class="pb-5 text-sm leading-relaxed">A vida útil de uma prótese capilar premium varia geralmente de 6 a 12 meses, dependendo diretamente da sua rotina de cuidados e manutenções periódicas (geralmente recomendadas a cada 15 ou 20 dias na barbearia para higienização e troca de fixação).</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 4 -->
+                <div class="glass-card rounded-xl border border-brand-gold/10 overflow-hidden">
+                    <button class="faq-btn w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none" onclick="toggleFaq(this)">
+                        <span class="font-bold text-white text-base md:text-lg">Posso cortar e estilizar do meu jeito?</span>
+                        <i class="fa-solid fa-chevron-down text-brand-gold transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-0 text-brand-light/80">
+                        <p class="pb-5 text-sm leading-relaxed">Sim! Como trabalhamos apenas com cabelo humano de primeira linha, as peças chegam mais compridas e o protético realiza o corte no seu próprio rosto, permitindo estilizar topetes, franjas, penteados para o lado ou qualquer estilo que você preferir.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 5 -->
+                <div class="glass-card rounded-xl border border-brand-gold/10 overflow-hidden">
+                    <button class="faq-btn w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none" onclick="toggleFaq(this)">
+                        <span class="font-bold text-white text-base md:text-lg">Cada resultado fica diferente?</span>
+                        <i class="fa-solid fa-chevron-down text-brand-gold transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-0 text-brand-light/80">
+                        <p class="pb-5 text-sm leading-relaxed">Sim, e esse é nosso grande diferencial! Buscamos harmonizar perfeitamente a prótese com suas características naturais, idade e formato de rosto, evitando aquele "efeito peruca" artificial.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VALORES -->
+    <section class="py-20 bg-[url('https://images.unsplash.com/photo-1593062096033-9a26b09da705?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')] bg-cover bg-center relative bg-fixed" id="valores">
+        <!-- Dark Overlay -->
+        <div class="absolute inset-0 bg-brand-dark/95 backdrop-blur-sm"></div>
+
+        <div class="container mx-auto px-6 relative z-10 max-w-3xl">
+            <div class="text-center mb-10">
+                <h2 class="font-serif text-3xl md:text-5xl font-bold text-white mb-4">Investimento em <span class="italic text-brand-gold">Você</span></h2>
+                <p class="text-brand-light/80 text-lg">Valores claros, justos e condições flexíveis para resgatar sua segurança.</p>
+            </div>
+
+            <!-- Pricing Card -->
+            <div class="bg-[#121212]/95 border border-brand-gold/40 rounded-3xl p-8 md:p-12 shadow-[0_0_50px_rgba(212,175,55,0.1)] relative overflow-hidden text-center">
+                
+                <!-- Ribbon Premium -->
+                <div class="absolute top-6 right-[-40px] bg-brand-gold text-brand-dark font-bold text-xs uppercase py-1 px-12 rotate-45">
+                    EXCLUSIVO
+                </div>
+
+                <h3 class="text-white text-2xl font-bold mb-2">Prótese Capilar Premium</h3>
+                <p class="text-brand-light/60 text-sm mb-8">Avaliação + Escolha Personalizada + Prótese Premium + Aplicação & Corte.</p>
+
+                <div class="space-y-4 mb-8">
+                    <!-- Preço À Vista -->
+                    <div class="bg-brand-dark/60 p-6 rounded-xl border border-brand-gold/15">
+                        <p class="text-brand-light/60 uppercase text-xs font-bold tracking-widest mb-1">Valor Promocional à vista</p>
+                        <div class="flex justify-center items-start text-brand-gold">
+                            <span class="text-xl mt-2 mr-1 font-bold">R$</span>
+                            <span class="text-5xl md:text-6xl font-black tracking-tighter">1.699</span>
+                        </div>
+                        <p class="text-brand-light/40 text-xs mt-2">(Pix, Débito ou Dinheiro)</p>
+                    </div>
+
+                    <!-- Parcelamento -->
+                    <div class="p-4">
+                        <p class="text-brand-light/80 font-medium text-sm md:text-base">
+                            ou <strong class="text-white text-lg">R$ 2.200</strong> em até <strong class="text-brand-gold">10x sem juros</strong> no cartão.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Método Pix Flexível -->
+                <div class="flex items-center justify-start gap-4 bg-brand-gold/5 p-4 rounded-xl border border-brand-gold/20 mb-8 text-left max-w-md mx-auto">
+                    <div class="text-brand-gold text-2xl pl-1">
+                        <i class="fa-brands fa-pix"></i>
+                    </div>
+                    <p class="text-xs text-brand-light/80 leading-relaxed">
+                        <strong class="text-white">Opção Ir Pagando aos Poucos:</strong> Você pode optar por efetuar pagamentos parciais antecipados via Pix e garantir o seu valor promocional de R$ 1.699!
+                    </p>
+                </div>
+
+                <!-- CTA -->
+                <a href="#agendar" class="inline-block w-full md:w-auto gold-gradient-bg text-brand-dark font-bold text-base px-10 py-4 rounded-full hover:scale-105 transition-transform duration-300 shadow-lg uppercase tracking-wider">
+                    Agendar minha colocação
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA FINAL FORTE -->
+    <section class="py-24 bg-brand-dark relative overflow-hidden" id="agendar">
+        <div class="absolute inset-0 bg-gradient-to-t from-brand-gold/5 to-transparent"></div>
+        <div class="container mx-auto px-6 relative z-10 text-center max-w-4xl">
+            <h2 class="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-8">
+                Chegou a hora de voltar a se sentir bem quando <span class="gold-gradient-text italic">olhar no espelho.</span>
+            </h2>
+            <p class="text-brand-light/70 text-lg md:text-xl mb-12 max-w-2xl mx-auto">
+                Não adie mais a sua felicidade. Dê o primeiro passo para recuperar sua imagem e segurança em uma conversa inteiramente privada e sem compromisso.
+            </p>
+            
+            <a href="#" class="inline-flex items-center justify-center gap-3 w-full md:w-auto bg-brand-whatsapp text-white font-bold text-xl px-12 py-5 rounded-full hover:bg-green-500 hover:scale-105 transition-all duration-300 shadow-[0_10px_25px_rgba(37,211,102,0.3)]">
+                <i class="fa-brands fa-whatsapp text-2xl"></i> Falar com o Protético no WhatsApp
+            </a>
+            
+            <p class="mt-6 text-xs text-brand-light/40 flex items-center justify-center gap-2">
+                <i class="fa-solid fa-user-shield"></i> Seus dados e imagens são tratados com confidencialidade absoluta.
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-gray border-t border-brand-gold/15 py-12">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+            
+            <!-- Logo Footer -->
+            <a href="#" class="flex flex-col items-center md:items-start group">
+                <div class="logo-container text-white transition-colors duration-300 group-hover:text-brand-gold">
+                    <span class="logo-text text-lg md:text-xl font-normal block leading-none">TELES</span>
+                    <span class="logo-subtext block text-right text-gray-400 uppercase leading-none mt-1">BARBEARIA</span>
+                </div>
+            </a>
+            
+            <div class="text-center md:text-right text-xs text-brand-light/40 space-y-1">
+                <p>&copy; 2026 Teles Barbearia. Todos os direitos reservados.</p>
+                <p>Especialistas em Rejuvenescimento e Prótese Capilar Masculina.</p>
+                <p class="text-[10px] text-brand-gold/50">Av. Rio Branco, Nº 649 - Setor Urias Magalhães, Goiânia - GO | WhatsApp: (62) 99158-0263</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="#" class="fixed bottom-6 right-6 z-50 bg-brand-whatsapp text-white w-16 h-16 rounded-full flex items-center justify-center text-3xl shadow-[0_4px_15px_rgba(37,211,102,0.4)] hover:bg-green-500 hover:scale-110 transition-all duration-300 animate-float" aria-label="Falar no WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+        <span class="absolute inline-flex h-full w-full rounded-full bg-brand-whatsapp opacity-20 animate-ping"></span>
+    </a>
+
+    <!-- JavaScript for Interactivity -->
+    <script>
+        // Navbar Scrolled Glassmorphism Effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-[#0a0a0a]/95', 'shadow-lg');
+                navbar.classList.remove('glass-card');
+            } else {
+                navbar.classList.remove('bg-[#0a0a0a]/95', 'shadow-lg');
+                navbar.classList.add('glass-card');
+            }
+        });
+
+        // FAQ Accordion Functionality
+        function toggleFaq(button) {
+            const answer = button.nextElementSibling;
+            const icon = button.querySelector('i');
+            
+            // Close other FAQs
+            document.querySelectorAll('.faq-answer').forEach(el => {
+                if (el !== answer) {
+                    el.classList.remove('open');
+                    el.previousElementSibling.querySelector('i').style.transform = 'rotate(0deg)';
+                }
+            });
+
+            // Toggle current FAQ
+            answer.classList.toggle('open');
+            if (answer.classList.contains('open')) {
+                icon.style.transform = 'rotate(180deg)';
+            } else {
+                icon.style.transform = 'rotate(0deg)';
+            }
+        }
+
+        // WhatsApp Direct Link Setup with Goiânia Phone: (62) 99158-0263
+        const waNumber = '5562991580263'; 
+        const waMessage = encodeURIComponent('Olá Teles Barbearia! Acessei o site de Prótese Capilar e gostaria de agendar uma avaliação para o meu caso.');
+        const waLinks = document.querySelectorAll('a[href="#agendar"], a[href="#"]');
+        
+        waLinks.forEach(link => {
+            const currentHref = link.getAttribute('href');
+            if(currentHref === '#' || currentHref === '#agendar') {
+                link.setAttribute('href', `https://wa.me/${waNumber}?text=${waMessage}`);
+                link.setAttribute('target', '_blank');
+            }
+        });
+    </script>
+</body>
+</html>
